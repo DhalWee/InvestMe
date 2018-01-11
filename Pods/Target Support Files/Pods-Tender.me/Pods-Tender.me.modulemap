@@ -1,0 +1,6 @@
+framework module Pods_Tender_me {
+  umbrella header "Pods-Tender.me-umbrella.h"
+
+  export *
+  module * { export * }
+}
