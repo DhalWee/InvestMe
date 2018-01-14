@@ -18,6 +18,8 @@ class AccountVC: UIViewController {
 
     @IBAction func logout() {
         signOut()
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "FirstPageVC")
+        self.show(vc!, sender: self)
     }
 
 }

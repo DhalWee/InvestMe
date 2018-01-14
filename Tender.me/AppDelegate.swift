@@ -19,13 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        UIApplication.shared.statusBarStyle = .lightContent
         
         if let _ = KeychainWrapper.standard.string(forKey: keyUID) {
-            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let navigationController:UINavigationController = storyboard.instantiateInitialViewController() as! UINavigationController
-            let rootViewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "MainViewVC") as UIViewController
-            navigationController.viewControllers = [rootViewController]
-            self.window?.rootViewController = navigationController
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainTabVC")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
         }
         
         return true

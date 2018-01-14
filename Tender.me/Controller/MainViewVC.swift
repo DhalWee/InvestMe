@@ -18,7 +18,8 @@ class MainViewVC: UIViewController {
     @IBOutlet weak var denominationTF: UITextField!
     @IBOutlet weak var costTF: UITextField!
     @IBOutlet weak var incomeTF: UITextField!
-    @IBOutlet weak var timeTillTF: UITextField!
+    @IBOutlet weak var timeTillDP: UIDatePicker!
+    @IBOutlet weak var errorLbl: UILabel!
 
     var tenders = [Tender]()
     var refreshControl: UIRefreshControl!
@@ -27,6 +28,8 @@ class MainViewVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        errorLbl.isHidden = true
+        
         refreshControl = UIRefreshControl()
         if !isInternetAvailable() {
             refreshControl.attributedTitle = NSAttributedString(string: "")
@@ -46,7 +49,6 @@ class MainViewVC: UIViewController {
         denominationTF.delegate = self
         costTF.delegate = self
         incomeTF.delegate = self
-        timeTillTF.delegate = self
 
         bottomConstraints = NSLayoutConstraint(item: popUp, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
         view.addConstraint(bottomConstraints!)
@@ -88,7 +90,11 @@ class MainViewVC: UIViewController {
     }
 
     @IBAction func addTenderBtnPressed(_ sender: Any){
-        
+        if isFilled() {
+            DataService.ds.createPost(User.init(), Post.init(denomination: denominationTF.text!, cost: costTF.text!, income: incomeTF.text!, tillTime: timeTillDP.date))
+            closePopUp()
+            print("MSG: New tender was posted")
+        }
     }
 
     func updateList(completion: (()->Void)!) {
@@ -103,6 +109,7 @@ class MainViewVC: UIViewController {
                     }
                 }
             }
+            self.tenders.reverse()
             completion()
         }
     }
@@ -114,6 +121,22 @@ class MainViewVC: UIViewController {
     @IBAction func closeBtnPressed(_ sender: UIButton) {
         closePopUp()
     }
+    
+    func isFilled() -> Bool {
+        if denominationTF.text == "" || denominationTF.text == nil {
+            errorDescription("Вы не заполнили поле \"Наименование\"")
+            return false
+        } else if costTF.text == "" || costTF.text == nil {
+            errorDescription("Вы не заполнили поле \"Сумма\"")
+            return false
+        } else if incomeTF.text == "" || incomeTF.text == nil {
+            errorDescription("Вы не заполнили поле \"Маржа\"")
+            return false
+        } else {
+            noError()
+            return true
+        }
+    }
 
     func openPopUp() {
         denominationTF.becomeFirstResponder()
@@ -122,7 +145,6 @@ class MainViewVC: UIViewController {
         tableView.alpha = 0.5
         popUp.isHidden = false
         addBtn.isEnabled = false
-
     }
 
     func closePopUp() {
@@ -135,16 +157,20 @@ class MainViewVC: UIViewController {
         denominationTF.text = ""
         costTF.text = ""
         incomeTF.text = ""
-        timeTillTF.text = ""
+        timeTillDP.date = Date.init()
+    }
+    
+    func errorDescription (_ message: String) {
+        errorLbl.text = message
+        errorLbl.isHidden = false
+    }
+    
+    func noError() {
+        errorLbl.text = ""
+        errorLbl.isHidden = true
     }
 
-    func errorAlert(message: String) {
-        let refreshAlert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        refreshAlert.addAction(UIAlertAction(title: "Окей", style: .default))
-        present(refreshAlert, animated: true, completion: nil)
-    }
-
-
+    
 }
 
 //Delegate and DataSource functions
@@ -159,7 +185,7 @@ extension MainViewVC: UITableViewDelegate, UITableViewDataSource, UITextFieldDel
             incomeTF.becomeFirstResponder()
             break
         case incomeTF:
-            timeTillTF.becomeFirstResponder()
+            timeTillDP.becomeFirstResponder()
             break
         default:
             textField.resignFirstResponder()
@@ -192,21 +218,3 @@ extension MainViewVC: UITableViewDelegate, UITableViewDataSource, UITextFieldDel
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

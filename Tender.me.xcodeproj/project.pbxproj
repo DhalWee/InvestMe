@@ -44,6 +44,7 @@
 		50B075F82003F43800C232E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B075F62003F43800C232E1 /* Main.storyboard */; };
 		50B075FA2003F43800C232E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B075F92003F43800C232E1 /* Assets.xcassets */; };
 		50B075FD2003F43800C232E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B075FB2003F43800C232E1 /* LaunchScreen.storyboard */; };
+		50CFE75020099018005DEA4E /* MyListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE74F20099018005DEA4E /* MyListVC.swift */; };
 		50D55CB62007BCC300B70A2D /* Tender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D55CB52007BCC300B70A2D /* Tender.swift */; };
 		50D55CB82007BCD100B70A2D /* TenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D55CB72007BCD100B70A2D /* TenderCell.swift */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		50B075FC2003F43800C232E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50B075FE2003F43800C232E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B6372120066D310087770F /* Tender.me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tender.me.entitlements; sourceTree = "<group>"; };
+		50CFE74F20099018005DEA4E /* MyListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListVC.swift; sourceTree = "<group>"; };
 		50D55CB52007BCC300B70A2D /* Tender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tender.swift; sourceTree = "<group>"; };
 		50D55CB72007BCD100B70A2D /* TenderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenderCell.swift; sourceTree = "<group>"; };
 		5824F3969CC25D0C0C0EAD12 /* Pods-Tender.me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tender.me.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tender.me/Pods-Tender.me.debug.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				509B562E2005389600D9EF16 /* Registration1VC.swift */,
 				509B5630200538AE00D9EF16 /* Registration2VC.swift */,
 				506B66E1200790E300264D8F /* MainViewVC.swift */,
+				50CFE74F20099018005DEA4E /* MyListVC.swift */,
 				5059CD6D2007CE8D00306B75 /* AccountVC.swift */,
 			);
 			path = Controller;
@@ -405,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				500A7BDC2006A90F00D76DB7 /* User.swift in Sources */,
+				50CFE75020099018005DEA4E /* MyListVC.swift in Sources */,
 				50409F0420053C0200FB500B /* DataService.swift in Sources */,
 				50409F0520053C0200FB500B /* StorageServices.swift in Sources */,
 				50409EFD20053BD100FB500B /* ShadowView.swift in Sources */,

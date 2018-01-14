@@ -27,6 +27,9 @@ class DataService {
     }
 
     func createPost(_ user: User, _ post: Post) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
         let info:[String: String] = [
             "phoneNumber": (user.phoneNumber),
             "position": (user.position),
@@ -34,11 +37,11 @@ class DataService {
             "photoUrl": "\(String(describing: user.photoUrl))",
             "email": (user.email),
             "denomination": (post.denomination),
-            "cost": (post.cost),
-            "income": (post.income),
-            "tillTime": "\(String(describing: post.tillTime))"
+            "cost": ("\(post.cost) ₸"),
+            "income": ("\(post.income) ₸"),
+            "tillTime": "\(post.tillTime)"
         ]
-        refPosts.child(user.uid).updateChildValues(info)
+        refPosts.child("\(user.uid)&\(Date.init())").updateChildValues(info)
     }
 
     func createUser(_ info: [String: String]) {
