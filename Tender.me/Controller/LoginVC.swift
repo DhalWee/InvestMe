@@ -20,6 +20,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         errorLbl.textColor = UIColor(hex: red)
         resetBtn.tintColor = UIColor(hex: darkBlue)
         errorLbl.isHidden = true

@@ -10,7 +10,6 @@ import UIKit
 
 class TenderCell: UITableViewCell {
 
-    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var denomination: UILabel!
     @IBOutlet weak var tillTime: UILabel!
     @IBOutlet weak var cost: UILabel!

@@ -44,6 +44,7 @@
 		50B075F82003F43800C232E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B075F62003F43800C232E1 /* Main.storyboard */; };
 		50B075FA2003F43800C232E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B075F92003F43800C232E1 /* Assets.xcassets */; };
 		50B075FD2003F43800C232E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B075FB2003F43800C232E1 /* LaunchScreen.storyboard */; };
+		50BDD438200B26530078E01A /* ViewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDD437200B26530078E01A /* ViewPostVC.swift */; };
 		50CFE75020099018005DEA4E /* MyListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE74F20099018005DEA4E /* MyListVC.swift */; };
 		50D55CB62007BCC300B70A2D /* Tender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D55CB52007BCC300B70A2D /* Tender.swift */; };
 		50D55CB82007BCD100B70A2D /* TenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D55CB72007BCD100B70A2D /* TenderCell.swift */; };
@@ -91,6 +92,7 @@
 		50B075FC2003F43800C232E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50B075FE2003F43800C232E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B6372120066D310087770F /* Tender.me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tender.me.entitlements; sourceTree = "<group>"; };
+		50BDD437200B26530078E01A /* ViewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostVC.swift; sourceTree = "<group>"; };
 		50CFE74F20099018005DEA4E /* MyListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListVC.swift; sourceTree = "<group>"; };
 		50D55CB52007BCC300B70A2D /* Tender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tender.swift; sourceTree = "<group>"; };
 		50D55CB72007BCD100B70A2D /* TenderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenderCell.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				509B562E2005389600D9EF16 /* Registration1VC.swift */,
 				509B5630200538AE00D9EF16 /* Registration2VC.swift */,
 				506B66E1200790E300264D8F /* MainViewVC.swift */,
+				50BDD437200B26530078E01A /* ViewPostVC.swift */,
 				50CFE74F20099018005DEA4E /* MyListVC.swift */,
 				5059CD6D2007CE8D00306B75 /* AccountVC.swift */,
 			);
@@ -424,6 +427,7 @@
 				50D55CB62007BCC300B70A2D /* Tender.swift in Sources */,
 				509B562D2005387B00D9EF16 /* LoginVC.swift in Sources */,
 				509B562F2005389600D9EF16 /* Registration1VC.swift in Sources */,
+				50BDD438200B26530078E01A /* ViewPostVC.swift in Sources */,
 				50409F0920053C1A00FB500B /* Extensions.swift in Sources */,
 				50409EFE20053BD100FB500B /* UnderlineField.swift in Sources */,
 			);
@@ -567,6 +571,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 649M8TPCDZ;
 				INFOPLIST_FILE = Tender.me/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.unicorn.Tenderme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -584,6 +589,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 649M8TPCDZ;
 				INFOPLIST_FILE = Tender.me/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.unicorn.Tenderme;
 				PRODUCT_NAME = "$(TARGET_NAME)";

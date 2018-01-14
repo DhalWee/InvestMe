@@ -30,8 +30,7 @@ func setUserDefaults(complition: (()->Void)!) {
         if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
             for snap in snapshot {
                 if snap.key == Auth.auth().currentUser?.uid {
-                    print("MSG: \(snapshot)")
-                    if let userData = snap.value as? Dictionary<String, String> {
+                    if let userData = snap.value as? Dictionary<String, Any> {
                         if let phoneNumber = userData["phoneNumber"] {
                             defaults.set(phoneNumber, forKey: "phoneNumber")
                         } else {
@@ -44,13 +43,16 @@ func setUserDefaults(complition: (()->Void)!) {
                         }
                         complition()
                     } else {
+                        print("MSG: Can't get here 1")
                         complition()
                     }
                 } else {
+                    print("MSG: Can't get here 2")
                     complition()
                 }
             }
         } else {
+            print("MSG: Can't get here 3")
             complition()
         }
     }

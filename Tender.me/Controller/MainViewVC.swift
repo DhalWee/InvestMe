@@ -27,6 +27,7 @@ class MainViewVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let user = User.init()
 
         errorLbl.isHidden = true
         
@@ -49,7 +50,8 @@ class MainViewVC: UIViewController {
         denominationTF.delegate = self
         costTF.delegate = self
         incomeTF.delegate = self
-
+        
+        //Constaints and keyboard notification for popUp
         bottomConstraints = NSLayoutConstraint(item: popUp, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
         view.addConstraint(bottomConstraints!)
 
@@ -113,14 +115,6 @@ class MainViewVC: UIViewController {
             completion()
         }
     }
-
-    @IBAction func addBtnPressed(_ sender: Any) {
-        openPopUp()
-    }
-
-    @IBAction func closeBtnPressed(_ sender: UIButton) {
-        closePopUp()
-    }
     
     func isFilled() -> Bool {
         if denominationTF.text == "" || denominationTF.text == nil {
@@ -136,6 +130,14 @@ class MainViewVC: UIViewController {
             noError()
             return true
         }
+    }
+    
+    @IBAction func addBtnPressed(_ sender: Any) {
+        openPopUp()
+    }
+    
+    @IBAction func closeBtnPressed(_ sender: UIButton) {
+        closePopUp()
     }
 
     func openPopUp() {
@@ -168,6 +170,18 @@ class MainViewVC: UIViewController {
     func noError() {
         errorLbl.text = ""
         errorLbl.isHidden = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination: ViewPostVC = segue.destination as! ViewPostVC
+        let index = tableView.indexPathForSelectedRow?.row
+        destination.tenderUID = tenders[index!].uid
+    }
+    
+    func noInternetConnectionError() {
+        let refreshAlert = UIAlertController(title: "No internet connection", message: "Please check your internet connection", preferredStyle: .alert)
+        refreshAlert.addAction(UIAlertAction(title: "Okay", style: .default))
+        present(refreshAlert, animated: true, completion: nil)
     }
 
     
@@ -214,7 +228,11 @@ extension MainViewVC: UITableViewDelegate, UITableViewDataSource, UITextFieldDel
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.performSegue(withIdentifier: "PassengerVC", sender: self)
+        if isInternetAvailable() {
+            self.performSegue(withIdentifier: "ViewPostVC", sender: self)
+        } else {
+            noInternetConnectionError()
+        }
     }
 
 }

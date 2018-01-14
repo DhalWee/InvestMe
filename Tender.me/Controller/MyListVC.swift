@@ -32,15 +32,6 @@ class MyListVC: UIViewController {
         
     }
     
-//    func userPositionDiff() {
-//        let user = User.init()
-//        if user.position == "Тендерщик" {
-//
-//        } else {
-//
-//        }
-//    }
-    
     @objc func refresh(sender: AnyObject) {
         if !isInternetAvailable() {
             refreshControl.endRefreshing()
@@ -52,22 +43,27 @@ class MyListVC: UIViewController {
             self.refreshControl.endRefreshing()
             self.tableView.reloadData()
         }
-        
-//        let user = User.init()
-//        if user.position == "Тендерщик" {
-//            updateMyList {
-//                self.refreshControl.endRefreshing()
-//                self.tableView.reloadData()
-//            }
-//        } else {
-//            getFavoriteList(completion: {
-//                self.updateFavoriteList(completion: {
-//                    self.refreshControl.endRefreshing()
-//                    self.tableView.reloadData()
-//                })
-//            })
-//        }
     }
+    
+    //Function for update Tender's list or favorite list for investor
+    func updatingCorrectList() {
+        let user = User.init()
+        if user.position == "Тендерщик" {
+            updateMyList {
+                self.refreshControl.endRefreshing()
+                self.tableView.reloadData()
+            }
+        } else {
+            getFavoriteList(completion: {
+                self.updateFavoriteList(completion: {
+                    self.refreshControl.endRefreshing()
+                    self.tableView.reloadData()
+                })
+            })
+        }
+    }
+    
+    
     
     func updateMyList(completion: (()->Void)!) {
         DataService.ds.refPosts.observeSingleEvent(of: .value) { (snapshot) in
@@ -88,44 +84,44 @@ class MyListVC: UIViewController {
         }
     }
     
-//    func getFavoriteList(completion: (()->Void)!) {
-//        DataService.ds.refUsers.observeSingleEvent(of: .value) { (snapshot) in
-//            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
-//                for snap in snapshot {
-//                    if snap.key == Auth.auth().currentUser?.uid {
-//                        if let userData = snap.value as? Dictionary<String, Any> {
-//                            if let favorites = userData["favorites"] as? Dictionary<String, Bool> {
-//                                print("MSG: \(favorites)")
-//                                for fav in favorites {
-//                                    self.list.append(fav.key)
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//            completion()
-//        }
-//    }
-//
-//    func updateFavoriteList(completion: (()->Void)!) {
-//        DataService.ds.refPosts.observeSingleEvent(of: .value) { (snapshot) in
-//            self.tenders.removeAll()
-//            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
-//                for snap in snapshot {
-//                    if self.list.contains(snap.key) {
-//                        if let userData = snap.value as? Dictionary<String, Any> {
-//                            let uid = snap.key
-//                            let tender = Tender.init(forСell: uid, userData)
-//                            self.tenders.append(tender)
-//                        }
-//                    }
-//                }
-//            }
-//            self.tenders.reverse()
-//            completion()
-//        }
-//    }
+    func getFavoriteList(completion: (()->Void)!) {
+        DataService.ds.refUsers.observeSingleEvent(of: .value) { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                for snap in snapshot {
+                    if snap.key == Auth.auth().currentUser?.uid {
+                        if let userData = snap.value as? Dictionary<String, Any> {
+                            if let favorites = userData["favorites"] as? Dictionary<String, Bool> {
+                                print("MSG: \(favorites)")
+                                for fav in favorites {
+                                    self.list.append(fav.key)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            completion()
+        }
+    }
+
+    func updateFavoriteList(completion: (()->Void)!) {
+        DataService.ds.refPosts.observeSingleEvent(of: .value) { (snapshot) in
+            self.tenders.removeAll()
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                for snap in snapshot {
+                    if self.list.contains(snap.key) {
+                        if let userData = snap.value as? Dictionary<String, Any> {
+                            let uid = snap.key
+                            let tender = Tender.init(forСell: uid, userData)
+                            self.tenders.append(tender)
+                        }
+                    }
+                }
+            }
+            self.tenders.reverse()
+            completion()
+        }
+    }
     
     
 }
@@ -158,22 +154,3 @@ extension MyListVC: UITableViewDelegate, UITableViewDataSource, UITextFieldDeleg
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

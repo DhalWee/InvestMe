@@ -12,6 +12,7 @@ class LaunchVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.statusBarStyle = .default
     }
 
     override func viewWillAppear(_ animated: Bool) {

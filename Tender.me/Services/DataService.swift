@@ -37,9 +37,10 @@ class DataService {
             "photoUrl": "\(String(describing: user.photoUrl))",
             "email": (user.email),
             "denomination": (post.denomination),
-            "cost": ("\(post.cost) ₸"),
-            "income": ("\(post.income) ₸"),
+            "cost": ("\(post.cost)"),
+            "income": ("\(post.income)"),
             "tillTime": "\(post.tillTime)"
+            // ₸
         ]
         refPosts.child("\(user.uid)&\(Date.init())").updateChildValues(info)
     }

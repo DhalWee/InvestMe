@@ -53,7 +53,7 @@ class Registration2VC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func isSamePass() -> Bool {
+    func isSamePwd() -> Bool {
         if passTF.text == retryPassTF.text {
             return true
         } else {
@@ -65,7 +65,7 @@ class Registration2VC: UIViewController, UITextFieldDelegate {
     @IBAction func loginBtnPressed() {
         view.endEditing(true)
         if !isVerified {
-            if isFilled() && isSamePass() {
+            if isFilled() && isSamePwd() {
                 registerting()
             }
         } else {
@@ -83,6 +83,7 @@ class Registration2VC: UIViewController, UITextFieldDelegate {
                 print("MSG: New user was created using email")
                 self.setDisplayName(complition: {
                     self.setProfileImage(complition: {
+                        //Setting new user to firebase database
                         let user = Auth.auth().currentUser
                         let info: [String: String] = [
                             "phoneNumber": self.phoneNumber!,
@@ -113,6 +114,7 @@ class Registration2VC: UIViewController, UITextFieldDelegate {
         let verifyAlert = UIAlertController(title: "Подтверждение почты", message: "Вам на почту было отправлено письмо с кодом подтверждения. Пройдите по присланной ссылке и войдите в учетную запись.", preferredStyle: .alert)
         verifyAlert.addAction(UIAlertAction(title: "Понятно", style: .default, handler: { (alert) in
             while true {
+                //Cheking if user verified email or not
                 reloadUser()
                 if (Auth.auth().currentUser?.isEmailVerified)! {
                     self.barBtn.title = "Войти"

@@ -10,6 +10,7 @@ import UIKit
 
 class Registration1VC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var surnameTF: UITextField!
     @IBOutlet weak var phoneNumberTF: UITextField!
@@ -23,11 +24,14 @@ class Registration1VC: UIViewController, UITextFieldDelegate, UIImagePickerContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         errorLbl.textColor = UIColor(hex: red)
         positionSC.tintColor = UIColor(hex: darkBlue)
         errorLbl.isHidden = true
         profileIV.layer.cornerRadius = profileIV.frame.width/2
-        profileIV.alpha = 0.5
+        bgView.layer.cornerRadius = bgView.frame.width/2
+        bgView.layer.opacity = 0.7
         choosePhotoIV.image = choosePhotoIV.image?.maskWithColor(color: UIColor(hex: white))
         nameTF.becomeFirstResponder()
         

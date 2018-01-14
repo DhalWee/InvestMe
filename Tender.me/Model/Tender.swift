@@ -78,7 +78,7 @@ class Tender {
         } else {
             self._phoneNumber = ""
         }
-        if let photoURL = userData["photoURL"] as? String {
+        if let photoURL = userData["photoUrl"] as? String {
             self._photoURL = photoURL
         } else {
             self._photoURL = "https://firebasestorage.googleapis.com/v0/b/socialapp-242da.appspot.com/o/noPhoto.png?alt=media&token=47ff2717-8c38-4347-8b68-dc166ac9130a"
@@ -119,7 +119,7 @@ class Tender {
         }
         self._email = ""
         self._phoneNumber = ""
-        self._photoURL = "https://firebasestorage.googleapis.com/v0/b/socialapp-242da.appspot.com/o/noPhoto.png?alt=media&token=47ff2717-8c38-4347-8b68-dc166ac9130a"
+        self._photoURL = ""
         self._position = ""
         if let denomination = userData["denomination"] as? String {
             self._denomination = denomination
