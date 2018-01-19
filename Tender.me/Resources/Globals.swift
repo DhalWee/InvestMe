@@ -46,9 +46,6 @@ func setUserDefaults(complition: (()->Void)!) {
                         print("MSG: Can't get here 1")
                         complition()
                     }
-                } else {
-                    print("MSG: Can't get here 2")
-                    complition()
                 }
             }
         } else {

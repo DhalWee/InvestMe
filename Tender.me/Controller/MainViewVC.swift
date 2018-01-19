@@ -27,7 +27,6 @@ class MainViewVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let user = User.init()
 
         errorLbl.isHidden = true
         
@@ -38,8 +37,6 @@ class MainViewVC: UIViewController {
             refreshControl.attributedTitle = NSAttributedString(string: "")
         }
         refreshControl.addTarget(self, action: #selector(self.refresh(sender:)), for: UIControlEvents.valueChanged)
-
-        refresh(sender: self)
 
         closePopUp()
         view.backgroundColor = UIColor(hex: darkBlue)
@@ -58,6 +55,10 @@ class MainViewVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: Notification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: Notification.Name.UIKeyboardWillHide, object: nil)
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        refresh(sender: self)
     }
 
     @objc func handleKeyboardNotification(notification: Notification) {

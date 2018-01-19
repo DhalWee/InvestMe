@@ -45,6 +45,7 @@
 		50B075FA2003F43800C232E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B075F92003F43800C232E1 /* Assets.xcassets */; };
 		50B075FD2003F43800C232E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B075FB2003F43800C232E1 /* LaunchScreen.storyboard */; };
 		50BDD438200B26530078E01A /* ViewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDD437200B26530078E01A /* ViewPostVC.swift */; };
+		50C597DA200CACA800144E2E /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C597D9200CACA800144E2E /* AccountService.swift */; };
 		50CFE75020099018005DEA4E /* MyListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE74F20099018005DEA4E /* MyListVC.swift */; };
 		50D55CB62007BCC300B70A2D /* Tender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D55CB52007BCC300B70A2D /* Tender.swift */; };
 		50D55CB82007BCD100B70A2D /* TenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D55CB72007BCD100B70A2D /* TenderCell.swift */; };
@@ -93,6 +94,7 @@
 		50B075FE2003F43800C232E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B6372120066D310087770F /* Tender.me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tender.me.entitlements; sourceTree = "<group>"; };
 		50BDD437200B26530078E01A /* ViewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostVC.swift; sourceTree = "<group>"; };
+		50C597D9200CACA800144E2E /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		50CFE74F20099018005DEA4E /* MyListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListVC.swift; sourceTree = "<group>"; };
 		50D55CB52007BCC300B70A2D /* Tender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tender.swift; sourceTree = "<group>"; };
 		50D55CB72007BCD100B70A2D /* TenderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenderCell.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			children = (
 				50409F0220053C0200FB500B /* DataService.swift */,
 				50409F0320053C0200FB500B /* StorageServices.swift */,
+				50C597D9200CACA800144E2E /* AccountService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				509B562D2005387B00D9EF16 /* LoginVC.swift in Sources */,
 				509B562F2005389600D9EF16 /* Registration1VC.swift in Sources */,
 				50BDD438200B26530078E01A /* ViewPostVC.swift in Sources */,
+				50C597DA200CACA800144E2E /* AccountService.swift in Sources */,
 				50409F0920053C1A00FB500B /* Extensions.swift in Sources */,
 				50409EFE20053BD100FB500B /* UnderlineField.swift in Sources */,
 			);

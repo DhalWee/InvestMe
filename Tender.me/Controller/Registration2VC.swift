@@ -69,6 +69,7 @@ class Registration2VC: UIViewController, UITextFieldDelegate {
                 registerting()
             }
         } else {
+            AccountService.shares.user = User.init()
             completeSignIn(uid: (Auth.auth().currentUser?.uid)!)
             performSegue(withIdentifier: "MainPageVC", sender: nil)
         }

@@ -44,6 +44,11 @@ class Registration1VC: UIViewController, UITextFieldDelegate, UIImagePickerContr
         imagePicker.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             profileIV.image = image.resizeImage(targetSize: CGSize(width: 100, height: 100))

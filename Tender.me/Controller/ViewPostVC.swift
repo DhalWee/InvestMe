@@ -15,7 +15,7 @@ class ViewPostVC: UIViewController {
     @IBOutlet weak var displayNameLbl: UILabel!
     @IBOutlet weak var phoneNumberLbl: UILabel!
     @IBOutlet weak var positionLbl: UILabel!
-    
+    @IBOutlet weak var callBtn: UIButton!
     @IBOutlet weak var denominationLbl: UILabel!
     @IBOutlet weak var costLbl: UILabel!
     @IBOutlet weak var incomeLbl: UILabel!
@@ -27,6 +27,7 @@ class ViewPostVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        callBtn.isEnabled = false
         profileIV.layer.cornerRadius = profileIV.frame.width/2
         profileIV.layer.masksToBounds = true
         
@@ -48,6 +49,8 @@ class ViewPostVC: UIViewController {
         costLbl.text = tender?.cost
         incomeLbl.text = tender?.income
         tillTimeLbl.text = tender?.tillTime
+        
+        callBtn.isEnabled = true
         
         displayNameLbl.backgroundColor = UIColor.white
         phoneNumberLbl.backgroundColor = UIColor.white

@@ -31,6 +31,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         passTF.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+
+    
     @IBAction func loginBtnPressed() {
         view.endEditing(true)
         if isFilled(){
@@ -42,6 +47,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 } else {
                     setUserDefaults(complition: {
                         self.isVerified(complition: {
+                            AccountService.shares.user = User.init()
                             self.completeSignIn(uid: (user?.uid)!)
                         })
                     })

@@ -14,12 +14,24 @@ class TenderCell: UITableViewCell {
     @IBOutlet weak var tillTime: UILabel!
     @IBOutlet weak var cost: UILabel!
     @IBOutlet weak var income: UILabel!
+//    @IBOutlet weak var delBtn: UIButton!
     
     var tender: Tender?
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+//        delBtn.setImage(delBtn.currentImage?.maskWithColor(color: UIColor(hex: red)), for: .normal)
+//        delBtn.imageView?.contentMode = .scaleAspectFit
+    }
+    
+//    @IBAction func delBtnPressed() {
+//        DataService.ds.deletePost(<#String#>)
+//    }
     
     func configureCell(tender: Tender) {
         denomination.text = tender.denomination

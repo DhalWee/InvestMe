@@ -27,9 +27,11 @@ class DataService {
     }
 
     func createPost(_ user: User, _ post: Post) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: post.tillTime)
+        let month = calendar.component(.month, from: post.tillTime)
+        let day = calendar.component(.day, from: post.tillTime)
+        let tillTime = "\(String(format: "%02d", day))-\(String(format: "%02d", month))-\(String(format: "%04d", year))"
         let info:[String: String] = [
             "phoneNumber": (user.phoneNumber),
             "position": (user.position),
@@ -39,10 +41,14 @@ class DataService {
             "denomination": (post.denomination),
             "cost": ("\(post.cost)"),
             "income": ("\(post.income)"),
-            "tillTime": "\(post.tillTime)"
+            "tillTime": "\(tillTime)"
             // ₸
         ]
         refPosts.child("\(user.uid)&\(Date.init())").updateChildValues(info)
+    }
+    
+    func deletePost(_ postUid: String) {
+        refPosts.child(postUid).removeValue()
     }
 
     func createUser(_ info: [String: String]) {
