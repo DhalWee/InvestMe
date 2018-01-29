@@ -85,10 +85,7 @@ class MainViewVC: UIViewController {
         }
         updateList {
             self.refreshControl.endRefreshing()
-            if (Auth.auth().currentUser?.isEmailVerified)! {
-                self.tableView.reloadData()
-            } else {
-            }
+            self.tableView.reloadData()
         }
     }
 
@@ -119,13 +116,16 @@ class MainViewVC: UIViewController {
     
     func isFilled() -> Bool {
         if denominationTF.text == "" || denominationTF.text == nil {
-            errorDescription("Вы не заполнили поле \"Наименование\"")
+            errorDescription("Вы не заполнили поле \"Товар\"")
             return false
         } else if costTF.text == "" || costTF.text == nil {
             errorDescription("Вы не заполнили поле \"Сумма\"")
             return false
         } else if incomeTF.text == "" || incomeTF.text == nil {
             errorDescription("Вы не заполнили поле \"Маржа\"")
+            return false
+        } else if !isInternetAvailable() {
+            errorDescription("Проверьте соединение с интернетом")
             return false
         } else {
             noError()
@@ -175,8 +175,7 @@ class MainViewVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination: ViewPostVC = segue.destination as! ViewPostVC
-        let index = tableView.indexPathForSelectedRow?.row
-        destination.tenderUID = tenders[index!].uid
+        destination.tenderUID = tenders[(tableView.indexPathForSelectedRow?.row)!].uid
     }
     
     func noInternetConnectionError() {

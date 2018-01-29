@@ -36,6 +36,7 @@
 		50409F2D200542DE00FB500B /* Geometria-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 50409F1D200542DD00FB500B /* Geometria-Heavy.otf */; };
 		5059CD6E2007CE8D00306B75 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5059CD6D2007CE8D00306B75 /* AccountVC.swift */; };
 		506B66E2200790E300264D8F /* MainViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B66E1200790E300264D8F /* MainViewVC.swift */; };
+		506CC3DB201E2539004B1016 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506CC3DA201E2539004B1016 /* SettingsVC.swift */; };
 		509B562D2005387B00D9EF16 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B562C2005387B00D9EF16 /* LoginVC.swift */; };
 		509B562F2005389600D9EF16 /* Registration1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B562E2005389600D9EF16 /* Registration1VC.swift */; };
 		509B5631200538AE00D9EF16 /* Registration2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B5630200538AE00D9EF16 /* Registration2VC.swift */; };
@@ -49,6 +50,7 @@
 		50CFE75020099018005DEA4E /* MyListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE74F20099018005DEA4E /* MyListVC.swift */; };
 		50D55CB62007BCC300B70A2D /* Tender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D55CB52007BCC300B70A2D /* Tender.swift */; };
 		50D55CB82007BCD100B70A2D /* TenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D55CB72007BCD100B70A2D /* TenderCell.swift */; };
+		50E935E1201F7FF700488A20 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E935E0201F7FF700488A20 /* EditVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,7 @@
 		50409F1D200542DD00FB500B /* Geometria-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Heavy.otf"; sourceTree = "<group>"; };
 		5059CD6D2007CE8D00306B75 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		506B66E1200790E300264D8F /* MainViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewVC.swift; sourceTree = "<group>"; };
+		506CC3DA201E2539004B1016 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		509B562C2005387B00D9EF16 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		509B562E2005389600D9EF16 /* Registration1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration1VC.swift; sourceTree = "<group>"; };
 		509B5630200538AE00D9EF16 /* Registration2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration2VC.swift; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 		50CFE74F20099018005DEA4E /* MyListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListVC.swift; sourceTree = "<group>"; };
 		50D55CB52007BCC300B70A2D /* Tender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tender.swift; sourceTree = "<group>"; };
 		50D55CB72007BCD100B70A2D /* TenderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenderCell.swift; sourceTree = "<group>"; };
+		50E935E0201F7FF700488A20 /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		5824F3969CC25D0C0C0EAD12 /* Pods-Tender.me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tender.me.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tender.me/Pods-Tender.me.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -222,7 +226,9 @@
 				506B66E1200790E300264D8F /* MainViewVC.swift */,
 				50BDD437200B26530078E01A /* ViewPostVC.swift */,
 				50CFE74F20099018005DEA4E /* MyListVC.swift */,
+				50E935E0201F7FF700488A20 /* EditVC.swift */,
 				5059CD6D2007CE8D00306B75 /* AccountVC.swift */,
+				506CC3DA201E2539004B1016 /* SettingsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -424,10 +430,12 @@
 				50409F0A20053C1A00FB500B /* Designs.swift in Sources */,
 				5059CD6E2007CE8D00306B75 /* AccountVC.swift in Sources */,
 				50B075F32003F43800C232E1 /* AppDelegate.swift in Sources */,
+				506CC3DB201E2539004B1016 /* SettingsVC.swift in Sources */,
 				50D55CB82007BCD100B70A2D /* TenderCell.swift in Sources */,
 				506B66E2200790E300264D8F /* MainViewVC.swift in Sources */,
 				50409F0120053BF800FB500B /* Globals.swift in Sources */,
 				50D55CB62007BCC300B70A2D /* Tender.swift in Sources */,
+				50E935E1201F7FF700488A20 /* EditVC.swift in Sources */,
 				509B562D2005387B00D9EF16 /* LoginVC.swift in Sources */,
 				509B562F2005389600D9EF16 /* Registration1VC.swift in Sources */,
 				50BDD438200B26530078E01A /* ViewPostVC.swift in Sources */,
@@ -575,7 +583,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 649M8TPCDZ;
 				INFOPLIST_FILE = Tender.me/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.unicorn.Tenderme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -593,7 +601,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 649M8TPCDZ;
 				INFOPLIST_FILE = Tender.me/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.unicorn.Tenderme;
 				PRODUCT_NAME = "$(TARGET_NAME)";

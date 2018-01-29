@@ -32,6 +32,10 @@ class MyListVC: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        refresh(sender: self)
+    }
+    
     @objc func refresh(sender: AnyObject) {
         if !isInternetAvailable() {
             refreshControl.endRefreshing()
@@ -91,7 +95,7 @@ class MyListVC: UIViewController {
                     if snap.key == Auth.auth().currentUser?.uid {
                         if let userData = snap.value as? Dictionary<String, Any> {
                             if let favorites = userData["favorites"] as? Dictionary<String, Bool> {
-                                print("MSG: \(favorites)")
+//                                print("MSG: \(favorites)")
                                 for fav in favorites {
                                     self.list.append(fav.key)
                                 }
@@ -123,6 +127,11 @@ class MyListVC: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination: EditVC = segue.destination as! EditVC
+        destination.tender = tenders[(tableView.indexPathForSelectedRow?.row)!]
+    }
+    
     
 }
 
@@ -150,7 +159,11 @@ extension MyListVC: UITableViewDelegate, UITableViewDataSource, UITextFieldDeleg
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        self.performSegue(withIdentifier: "PassengerVC", sender: self)
+        if isInternetAvailable() {
+            self.performSegue(withIdentifier: "EditVC", sender: self)
+        } else {
+//            noInternetConnectionError()
+        }
     }
     
 }

@@ -80,7 +80,15 @@ class ViewPostVC: UIViewController {
     
     @IBAction func callBtnPressed(_ sender: Any){
         if let url = URL(string: "TEL://\(tender!.phoneNumber)") {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                let urlString = "telprompt:\(tender!.phoneNumber)";
+                let url = NSURL(fileURLWithPath: urlString);
+                if UIApplication.shared.canOpenURL(url as URL) {
+                    UIApplication.shared.openURL(url as URL)
+                }
+            }
         }
     }
     
