@@ -28,7 +28,7 @@ class AccountVC: UIViewController {
     }
     
     func setUserInfo() {
-        let user = AccountService.shares.user
+        let user = User.init()
         
         if let data = NSData(contentsOf: user.photoUrl) {
             profileIV.image = UIImage(data: data as Data)
@@ -45,13 +45,20 @@ class AccountVC: UIViewController {
         phoneNumberLbl.backgroundColor = UIColor.white
         positionLbl.backgroundColor = UIColor.white
         emailLbl.backgroundColor = UIColor.white
+        profileIV.backgroundColor = UIColor.white
         
     }
-
-    @IBAction func logout() {
-        signOut()
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "FirstPageVC")
-        self.show(vc!, sender: self)
+    
+    @IBAction func settingsBtnPressed(_ sender: Any){
+        performSegue(withIdentifier: "SettingsVC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! SettingsVC
+        destination.displayName = displayNameLbl.text
+        destination.phoneNumber = phoneNumberLbl.text
+        destination.position = positionLbl.text
+        destination.photoData = UIImagePNGRepresentation(profileIV.image!)
     }
 
 }

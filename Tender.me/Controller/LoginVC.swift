@@ -47,7 +47,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 } else {
                     setUserDefaults(complition: {
                         self.isVerified(complition: {
-                            AccountService.shares.user = User.init()
                             self.completeSignIn(uid: (user?.uid)!)
                         })
                     })

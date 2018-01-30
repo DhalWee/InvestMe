@@ -15,6 +15,7 @@ class EditVC: UIViewController {
     @IBOutlet weak var costTF: UITextField!
     @IBOutlet weak var incomeTF: UITextField!
     @IBOutlet weak var date: UIDatePicker!
+    @IBOutlet weak var saveBtn: UIButton!
     
     var tender: Tender?
 
@@ -41,11 +42,14 @@ class EditVC: UIViewController {
     
     @IBAction func saveBtnPressed() {
         if isFilled() {
+            saveBtn.isEnabled = false
             DataService.ds.refPosts.child((tender?.uid)!).removeValue(completionBlock: { (error, ref) in
                 if error != nil {
                     self.errorDescription("Невозможно обновить, повторите попытку позже")
+                    self.saveBtn.isEnabled = true
                 } else {
                     DataService.ds.createPost(User.init(), Post.init(denomination: self.denominationTF.text!, cost: self.costTF.text!, income: self.incomeTF.text!, tillTime: self.date.date))
+                    self.saveBtn.isEnabled = true
                     _ = self.navigationController?.popViewController(animated: true)
                     print("MSG: Tender was modified")
                 }
@@ -56,7 +60,7 @@ class EditVC: UIViewController {
     @IBAction func deleteBtnPressed() {
         DataService.ds.refPosts.child((tender?.uid)!).removeValue(completionBlock: { (error, ref) in
             if error != nil {
-                self.errorDescription("Невозможно обновить, повторите попытку позже")
+                self.errorDescription("Невозможно удалить, повторите попытку позже")
             } else {
                 _ = self.navigationController?.popViewController(animated: true)
                 print("MSG: Tender was deleted")

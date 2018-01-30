@@ -79,13 +79,14 @@ class MainViewVC: UIViewController {
 
     @objc func refresh(sender: AnyObject) {
         if !isInternetAvailable() {
+            refreshControl.attributedTitle = NSAttributedString(string: "Проверьте соединение с интернетом")
             refreshControl.endRefreshing()
         } else {
             refreshControl.attributedTitle = NSAttributedString(string: "")
-        }
-        updateList {
-            self.refreshControl.endRefreshing()
-            self.tableView.reloadData()
+            updateList {
+                self.refreshControl.endRefreshing()
+                self.tableView.reloadData()
+            }
         }
     }
 
@@ -161,6 +162,7 @@ class MainViewVC: UIViewController {
         costTF.text = ""
         incomeTF.text = ""
         timeTillDP.date = Date.init()
+        noError()
     }
     
     func errorDescription (_ message: String) {
