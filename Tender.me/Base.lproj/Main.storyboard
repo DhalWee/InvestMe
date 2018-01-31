@@ -1502,7 +1502,7 @@
                     <connections>
                         <outlet property="tableView" destination="Bkd-K1-E3h" id="53C-lF-HJJ"/>
                         <segue destination="UbG-g5-KWq" kind="show" identifier="EditVC" id="YkC-0M-hnI"/>
-                        <segue destination="i0x-xq-N8I" kind="show" identifier="FavoritesVC" id="2dj-x6-J85"/>
+                        <segue destination="i0x-xq-N8I" kind="show" identifier="FavoriteVC" id="2dj-x6-J85"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78K-kF-Fiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1722,7 +1722,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qtM-Je-bsq"/>
-        <segue reference="c7r-jI-GyL"/>
+        <segue reference="2dj-x6-J85"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -30,10 +30,20 @@ class MyListVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        if User.init().position == "Инвестор" {
+            self.navigationController?.navigationBar.topItem?.title = "Избранные"
+        } else {
+            self.navigationController?.navigationBar.topItem?.title = "Мои тендеры"
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         refresh(sender: self)
+        if User.init().position == "Инвестор" {
+            self.navigationController?.navigationBar.topItem?.title = "Избранные"
+        } else {
+            self.navigationController?.navigationBar.topItem?.title = "Мои тендеры"
+        }
     }
     
     @objc func refresh(sender: AnyObject) {
@@ -42,11 +52,7 @@ class MyListVC: UIViewController {
         } else {
             refreshControl.attributedTitle = NSAttributedString(string: "")
         }
-        
-        updateMyList {
-            self.refreshControl.endRefreshing()
-            self.tableView.reloadData()
-        }
+        updatingCorrectList()
     }
     
     //Function for update Tender's list or favorite list for investor
@@ -59,6 +65,7 @@ class MyListVC: UIViewController {
             }
         } else {
             getFavoriteList(completion: {
+                print("MSG: getting favorite list")
                 self.updateFavoriteList(completion: {
                     self.refreshControl.endRefreshing()
                     self.tableView.reloadData()
@@ -66,8 +73,6 @@ class MyListVC: UIViewController {
             })
         }
     }
-    
-    
     
     func updateMyList(completion: (()->Void)!) {
         DataService.ds.refPosts.observeSingleEvent(of: .value) { (snapshot) in
@@ -95,7 +100,6 @@ class MyListVC: UIViewController {
                     if snap.key == Auth.auth().currentUser?.uid {
                         if let userData = snap.value as? Dictionary<String, Any> {
                             if let favorites = userData["favorites"] as? Dictionary<String, Bool> {
-//                                print("MSG: \(favorites)")
                                 for fav in favorites {
                                     self.list.append(fav.key)
                                 }
@@ -128,8 +132,13 @@ class MyListVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination: EditVC = segue.destination as! EditVC
-        destination.tender = tenders[(tableView.indexPathForSelectedRow?.row)!]
+        if User.init().position == "Инвестор" {
+            let destination: ViewPostVC = segue.destination as! ViewPostVC
+            destination.tenderUID = tenders[(tableView.indexPathForSelectedRow?.row)!].uid
+        } else {
+            let destination: EditVC = segue.destination as! EditVC
+            destination.tender = tenders[(tableView.indexPathForSelectedRow?.row)!]
+        }
     }
     
     
@@ -160,7 +169,11 @@ extension MyListVC: UITableViewDelegate, UITableViewDataSource, UITextFieldDeleg
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isInternetAvailable() {
-            self.performSegue(withIdentifier: "EditVC", sender: self)
+            if User.init().position == "Инвестор" {
+                self.performSegue(withIdentifier: "FavoriteVC", sender: self)
+            } else {
+                self.performSegue(withIdentifier: "EditVC", sender: self)
+            }
         } else {
 //            noInternetConnectionError()
         }

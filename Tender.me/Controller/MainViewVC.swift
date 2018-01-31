@@ -20,24 +20,21 @@ class MainViewVC: UIViewController {
     @IBOutlet weak var incomeTF: UITextField!
     @IBOutlet weak var timeTillDP: UIDatePicker!
     @IBOutlet weak var errorLbl: UILabel!
-
+    
     var tenders = [Tender]()
     var refreshControl: UIRefreshControl!
     var bottomConstraints: NSLayoutConstraint?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         errorLbl.isHidden = true
         
         refreshControl = UIRefreshControl()
-        if !isInternetAvailable() {
-            refreshControl.attributedTitle = NSAttributedString(string: "")
-        } else {
-            refreshControl.attributedTitle = NSAttributedString(string: "")
-        }
-        refreshControl.addTarget(self, action: #selector(self.refresh(sender:)), for: UIControlEvents.valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "")
+        refreshControl.addTarget(self, action: #selector(self.refresh(sender: )), for: UIControlEvents.valueChanged)
 
+        refresh(sender: self)
         closePopUp()
         view.backgroundColor = UIColor(hex: darkBlue)
 
@@ -54,13 +51,15 @@ class MainViewVC: UIViewController {
 
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: Notification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        
+        positionFunc()
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        refresh(sender: self)
+        positionFunc()
     }
-
+    
     @objc func handleKeyboardNotification(notification: Notification) {
         if let userInfo = notification.userInfo {
             let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
@@ -134,7 +133,7 @@ class MainViewVC: UIViewController {
         }
     }
     
-    @IBAction func addBtnPressed(_ sender: Any) {
+    @IBAction func addBtnPressed(_ sender: UIBarButtonItem) {
         openPopUp()
     }
     
@@ -184,6 +183,20 @@ class MainViewVC: UIViewController {
         let refreshAlert = UIAlertController(title: "No internet connection", message: "Please check your internet connection", preferredStyle: .alert)
         refreshAlert.addAction(UIAlertAction(title: "Okay", style: .default))
         present(refreshAlert, animated: true, completion: nil)
+    }
+    
+    func positionFunc() {
+        if User.init().position == "Инвестор" {
+            addBtn.isEnabled = false
+            addBtn.tintColor = UIColor.clear
+            self.tabBarController?.tabBar.items![1].image = #imageLiteral(resourceName: "emptyStarIcon")
+            self.tabBarController?.tabBar.items![1].selectedImage = #imageLiteral(resourceName: "emptyStarIcon")
+        } else {
+            addBtn.isEnabled = true
+            addBtn.tintColor = UIColor.white
+            self.tabBarController?.tabBar.items![1].image = #imageLiteral(resourceName: "myListIcon")
+            self.tabBarController?.tabBar.items![1].selectedImage = #imageLiteral(resourceName: "myListIcon")
+        }
     }
 
     

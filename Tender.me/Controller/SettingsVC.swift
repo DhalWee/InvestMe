@@ -184,6 +184,13 @@ class SettingsVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 _ = self.navigationController?.popViewController(animated: true)
             }
         }
+        if User.init().position == "Инвестор" {
+            self.tabBarController?.tabBar.items![1].image = #imageLiteral(resourceName: "emptyStarIcon")
+            self.tabBarController?.tabBar.items![1].selectedImage = #imageLiteral(resourceName: "emptyStarIcon")
+        } else {
+            self.tabBarController?.tabBar.items![1].image = #imageLiteral(resourceName: "myListIcon")
+            self.tabBarController?.tabBar.items![1].selectedImage = #imageLiteral(resourceName: "myListIcon")
+        }
     }
 
     func loadShows(completionHandler: (() -> Void)!) {
