@@ -95,6 +95,7 @@ class MyListVC: UIViewController {
     
     func getFavoriteList(completion: (()->Void)!) {
         DataService.ds.refUsers.observeSingleEvent(of: .value) { (snapshot) in
+            self.list.removeAll()
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
                     if snap.key == Auth.auth().currentUser?.uid {
@@ -135,12 +136,12 @@ class MyListVC: UIViewController {
         if User.init().position == "Инвестор" {
             let destination: ViewPostVC = segue.destination as! ViewPostVC
             destination.tenderUID = tenders[(tableView.indexPathForSelectedRow?.row)!].uid
+            destination.isFav = true
         } else {
             let destination: EditVC = segue.destination as! EditVC
             destination.tender = tenders[(tableView.indexPathForSelectedRow?.row)!]
         }
     }
-    
     
 }
 

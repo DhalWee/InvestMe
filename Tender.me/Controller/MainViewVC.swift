@@ -24,6 +24,7 @@ class MainViewVC: UIViewController {
     var tenders = [Tender]()
     var refreshControl: UIRefreshControl!
     var bottomConstraints: NSLayoutConstraint?
+    var favList: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,7 @@ class MainViewVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        refresh(sender: self)
         positionFunc()
     }
     
@@ -111,6 +113,25 @@ class MainViewVC: UIViewController {
             }
             self.tenders.reverse()
             completion()
+        }
+    }
+    
+    func getFavoriteList() {
+        DataService.ds.refUsers.observeSingleEvent(of: .value) { (snapshot) in
+            self.favList.removeAll()
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                for snap in snapshot {
+                    if snap.key == Auth.auth().currentUser?.uid {
+                        if let userData = snap.value as? Dictionary<String, Any> {
+                            if let favorites = userData["favorites"] as? Dictionary<String, Bool> {
+                                for fav in favorites {
+                                    self.favList.append(fav.key)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -176,7 +197,11 @@ class MainViewVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination: ViewPostVC = segue.destination as! ViewPostVC
-        destination.tenderUID = tenders[(tableView.indexPathForSelectedRow?.row)!].uid
+        let tenderUID = tenders[(tableView.indexPathForSelectedRow?.row)!].uid
+        destination.tenderUID = tenderUID
+        if favList.contains(tenderUID) {
+            destination.isFav = true
+        }
     }
     
     func noInternetConnectionError() {
@@ -191,6 +216,7 @@ class MainViewVC: UIViewController {
             addBtn.tintColor = UIColor.clear
             self.tabBarController?.tabBar.items![1].image = #imageLiteral(resourceName: "emptyStarIcon")
             self.tabBarController?.tabBar.items![1].selectedImage = #imageLiteral(resourceName: "emptyStarIcon")
+            getFavoriteList()
         } else {
             addBtn.isEnabled = true
             addBtn.tintColor = UIColor.white

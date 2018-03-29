@@ -73,8 +73,6 @@ func handlingFirebaseError (_ errorCode: AuthErrorCode?) -> String {
             return "Не корректная электронная почта"
         case .userDisabled:
             return "Аккаунт заблакирован"
-        case .emailAlreadyInUse:
-            return ("Почта уже используется")
         case .networkError:
             return ("Нет соединении с интернетом")
         case .weakPassword:

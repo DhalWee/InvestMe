@@ -17,7 +17,6 @@
 		50409F0520053C0200FB500B /* StorageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50409F0320053C0200FB500B /* StorageServices.swift */; };
 		50409F0920053C1A00FB500B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50409F0720053C1A00FB500B /* Extensions.swift */; };
 		50409F0A20053C1A00FB500B /* Designs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50409F0820053C1A00FB500B /* Designs.swift */; };
-		50409F0C2005405200FB500B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50409F0B2005405100FB500B /* GoogleService-Info.plist */; };
 		50409F1E200542DE00FB500B /* Geometria-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 50409F0E200542DD00FB500B /* Geometria-ExtraLight.otf */; };
 		50409F1F200542DE00FB500B /* Geometria-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 50409F0F200542DD00FB500B /* Geometria-ThinItalic.otf */; };
 		50409F20200542DE00FB500B /* Geometria-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 50409F10200542DD00FB500B /* Geometria-Medium.otf */; };
@@ -37,6 +36,7 @@
 		5059CD6E2007CE8D00306B75 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5059CD6D2007CE8D00306B75 /* AccountVC.swift */; };
 		506B66E2200790E300264D8F /* MainViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B66E1200790E300264D8F /* MainViewVC.swift */; };
 		506CC3DB201E2539004B1016 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506CC3DA201E2539004B1016 /* SettingsVC.swift */; };
+		507F2CF2206CC1C500AAC432 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 507F2CF1206CC1C400AAC432 /* GoogleService-Info.plist */; };
 		509B562D2005387B00D9EF16 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B562C2005387B00D9EF16 /* LoginVC.swift */; };
 		509B562F2005389600D9EF16 /* Registration1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B562E2005389600D9EF16 /* Registration1VC.swift */; };
 		509B5631200538AE00D9EF16 /* Registration2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B5630200538AE00D9EF16 /* Registration2VC.swift */; };
@@ -64,7 +64,6 @@
 		50409F0320053C0200FB500B /* StorageServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageServices.swift; sourceTree = "<group>"; };
 		50409F0720053C1A00FB500B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		50409F0820053C1A00FB500B /* Designs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Designs.swift; sourceTree = "<group>"; };
-		50409F0B2005405100FB500B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50409F0E200542DD00FB500B /* Geometria-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-ExtraLight.otf"; sourceTree = "<group>"; };
 		50409F0F200542DD00FB500B /* Geometria-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-ThinItalic.otf"; sourceTree = "<group>"; };
 		50409F10200542DD00FB500B /* Geometria-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Medium.otf"; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		5059CD6D2007CE8D00306B75 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		506B66E1200790E300264D8F /* MainViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewVC.swift; sourceTree = "<group>"; };
 		506CC3DA201E2539004B1016 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		507F2CF1206CC1C400AAC432 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		509B562C2005387B00D9EF16 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		509B562E2005389600D9EF16 /* Registration1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration1VC.swift; sourceTree = "<group>"; };
 		509B5630200538AE00D9EF16 /* Registration2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration2VC.swift; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 				50B075F62003F43800C232E1 /* Main.storyboard */,
 				50B075FB2003F43800C232E1 /* LaunchScreen.storyboard */,
 				50B075F92003F43800C232E1 /* Assets.xcassets */,
-				50409F0B2005405100FB500B /* GoogleService-Info.plist */,
+				507F2CF1206CC1C400AAC432 /* GoogleService-Info.plist */,
 				50B075FE2003F43800C232E1 /* Info.plist */,
 			);
 			path = Tender.me;
@@ -340,8 +340,8 @@
 				50409F2B200542DE00FB500B /* Geometria-Italic.otf in Resources */,
 				50409F24200542DE00FB500B /* Geometria-LightItalic.otf in Resources */,
 				50409F2A200542DE00FB500B /* Geometria-Bold.otf in Resources */,
-				50409F0C2005405200FB500B /* GoogleService-Info.plist in Resources */,
 				50B075FA2003F43800C232E1 /* Assets.xcassets in Resources */,
+				507F2CF2206CC1C500AAC432 /* GoogleService-Info.plist in Resources */,
 				50409F1F200542DE00FB500B /* Geometria-ThinItalic.otf in Resources */,
 				50B075F82003F43800C232E1 /* Main.storyboard in Resources */,
 			);
@@ -352,7 +352,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		136EB136770970AE62D44B9A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -576,13 +576,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Tender.me/Tender.me.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 649M8TPCDZ;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = Tender.me/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.unicorn.Tenderme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -594,13 +597,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Tender.me/Tender.me.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 649M8TPCDZ;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = Tender.me/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.unicorn.Tenderme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

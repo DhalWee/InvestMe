@@ -23,6 +23,8 @@ class ViewPostVC: UIViewController {
     
     var tenderUID: String?
     var tender: Tender?
+    var isFav: Bool = false
+    var favBtn: UIBarButtonItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,33 @@ class ViewPostVC: UIViewController {
         getPost {
             self.setInfo()
         }
+        favFunc()
+    }
+    
+    func favFunc() {
+        if User.init().position == "Инвестор" {
+            if isFav {
+                favBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "fullStarIcon"), style: .plain, target: self, action: #selector(favBtnPressed(sender: )))
+                navigationItem.rightBarButtonItem = favBtn
+            } else {
+                favBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "emptyStarIcon"), style: .plain, target: self, action: #selector(favBtnPressed(sender: )))
+                navigationItem.rightBarButtonItem = favBtn
+            }
+        } else {
+            navigationItem.rightBarButtonItem = nil
+        }
+    }
+    
+    @objc func favBtnPressed(sender: UIBarButtonItem) {
+        if isFav {
+            DataService.ds.refUsers.child((Auth.auth().currentUser?.uid)!).child("favorites").child(tenderUID!).removeValue()
+            isFav = false
+        } else {
+            print("MSG: \(tenderUID!)")
+            DataService.ds.refUsers.child((Auth.auth().currentUser?.uid)!).child("favorites").updateChildValues([tenderUID!: true])
+            isFav = true
+        }
+        favFunc()
     }
     
     func setInfo() {

@@ -81,6 +81,7 @@ class Registration2VC: UIViewController, UITextFieldDelegate {
                 print("MSG: Unable to authenticate with firebase using email")
             } else {
                 print("MSG: New user was created using email")
+                self.errorDescription("")
                 self.setDisplayName(complition: {
                     self.setProfileImage(complition: {
                         //Setting new user to firebase database
