@@ -29,6 +29,14 @@ class MainViewVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Auth.auth().updateCurrentUser(Auth.auth().currentUser!) { (error) in
+            if error != nil {
+                print("MSG: \(String(describing: error))")
+            } else {
+                self.refresh(sender: self)
+            }
+        }
+        
         errorLbl.isHidden = true
         
         refreshControl = UIRefreshControl()

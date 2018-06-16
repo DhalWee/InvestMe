@@ -47,6 +47,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 } else {
                     setUserDefaults(complition: {
                         self.isVerified(complition: {
+                            print("MSG: Verified")
                             self.completeSignIn(uid: (user?.uid)!)
                         })
                     })
@@ -65,6 +66,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             verifyAlert.addAction(UIAlertAction(title: "Отправить", style: .default, handler: { (alert) in
                 self.enable()
                 sendEmailVerification()
+                complition()
             }))
             verifyAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: { (alert) in
                 self.enable()

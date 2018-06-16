@@ -30,19 +30,27 @@ class MyListVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        if User.init().position == "Инвестор" {
-            self.navigationController?.navigationBar.topItem?.title = "Избранные"
+        if Auth.auth().currentUser?.email == "tendermeapp@gmail.com" {
+            self.navigationController?.navigationBar.topItem?.title = "Админ"
         } else {
-            self.navigationController?.navigationBar.topItem?.title = "Мои тендеры"
+            if User.init().position == "Инвестор" {
+                self.navigationController?.navigationBar.topItem?.title = "Избранные"
+            } else {
+                self.navigationController?.navigationBar.topItem?.title = "Мои тендеры"
+            }
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         refresh(sender: self)
-        if User.init().position == "Инвестор" {
-            self.navigationController?.navigationBar.topItem?.title = "Избранные"
+        if Auth.auth().currentUser?.email == "tendermeapp@gmail.com" {
+            self.navigationController?.navigationBar.topItem?.title = "Админ"
         } else {
-            self.navigationController?.navigationBar.topItem?.title = "Мои тендеры"
+            if User.init().position == "Инвестор" {
+                self.navigationController?.navigationBar.topItem?.title = "Избранные"
+            } else {
+                self.navigationController?.navigationBar.topItem?.title = "Мои тендеры"
+            }
         }
     }
     
@@ -57,20 +65,45 @@ class MyListVC: UIViewController {
     
     //Function for update Tender's list or favorite list for investor
     func updatingCorrectList() {
-        let user = User.init()
-        if user.position == "Тендерщик" {
-            updateMyList {
+        if Auth.auth().currentUser?.email == "tendermeapp@gmail.com"{
+            updateAdminList {
                 self.refreshControl.endRefreshing()
                 self.tableView.reloadData()
             }
         } else {
-            getFavoriteList(completion: {
-                print("MSG: getting favorite list")
-                self.updateFavoriteList(completion: {
+            let user = User.init()
+            if user.position == "Тендерщик" {
+                updateMyList {
                     self.refreshControl.endRefreshing()
                     self.tableView.reloadData()
+                }
+            } else {
+                getFavoriteList(completion: {
+                    print("MSG: getting favorite list")
+                    self.updateFavoriteList(completion: {
+                        self.refreshControl.endRefreshing()
+                        self.tableView.reloadData()
+                    })
                 })
-            })
+            }
+        }
+    }
+    
+    func updateAdminList(completion: (()->Void)!) {
+        DataService.ds.refPosts.observeSingleEvent(of: .value) { (snapshot) in
+            self.tenders.removeAll()
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                for snap in snapshot {
+                    if let userData = snap.value as? Dictionary<String, Any> {
+                        let uid = snap.key
+                        let tender = Tender.init(forСell: uid, userData)
+                        self.tenders.append(tender)
+                    }
+                
+                }
+            }
+            self.tenders.reverse()
+            completion()
         }
     }
     

@@ -36,7 +36,6 @@
 		5059CD6E2007CE8D00306B75 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5059CD6D2007CE8D00306B75 /* AccountVC.swift */; };
 		506B66E2200790E300264D8F /* MainViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B66E1200790E300264D8F /* MainViewVC.swift */; };
 		506CC3DB201E2539004B1016 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506CC3DA201E2539004B1016 /* SettingsVC.swift */; };
-		507F2CF2206CC1C500AAC432 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 507F2CF1206CC1C400AAC432 /* GoogleService-Info.plist */; };
 		509B562D2005387B00D9EF16 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B562C2005387B00D9EF16 /* LoginVC.swift */; };
 		509B562F2005389600D9EF16 /* Registration1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B562E2005389600D9EF16 /* Registration1VC.swift */; };
 		509B5631200538AE00D9EF16 /* Registration2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B5630200538AE00D9EF16 /* Registration2VC.swift */; };
@@ -49,6 +48,7 @@
 		50CFE75020099018005DEA4E /* MyListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE74F20099018005DEA4E /* MyListVC.swift */; };
 		50D55CB62007BCC300B70A2D /* Tender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D55CB52007BCC300B70A2D /* Tender.swift */; };
 		50D55CB82007BCD100B70A2D /* TenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D55CB72007BCD100B70A2D /* TenderCell.swift */; };
+		50D7EFEC2086043600C162DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50D7EFEB2086043600C162DD /* GoogleService-Info.plist */; };
 		50E935E1201F7FF700488A20 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E935E0201F7FF700488A20 /* EditVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,7 +83,6 @@
 		5059CD6D2007CE8D00306B75 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		506B66E1200790E300264D8F /* MainViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewVC.swift; sourceTree = "<group>"; };
 		506CC3DA201E2539004B1016 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		507F2CF1206CC1C400AAC432 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		509B562C2005387B00D9EF16 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		509B562E2005389600D9EF16 /* Registration1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration1VC.swift; sourceTree = "<group>"; };
 		509B5630200538AE00D9EF16 /* Registration2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration2VC.swift; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		50CFE74F20099018005DEA4E /* MyListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListVC.swift; sourceTree = "<group>"; };
 		50D55CB52007BCC300B70A2D /* Tender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tender.swift; sourceTree = "<group>"; };
 		50D55CB72007BCD100B70A2D /* TenderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenderCell.swift; sourceTree = "<group>"; };
+		50D7EFEB2086043600C162DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50E935E0201F7FF700488A20 /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		5824F3969CC25D0C0C0EAD12 /* Pods-Tender.me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tender.me.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tender.me/Pods-Tender.me.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,7 +207,7 @@
 				50B075F62003F43800C232E1 /* Main.storyboard */,
 				50B075FB2003F43800C232E1 /* LaunchScreen.storyboard */,
 				50B075F92003F43800C232E1 /* Assets.xcassets */,
-				507F2CF1206CC1C400AAC432 /* GoogleService-Info.plist */,
+				50D7EFEB2086043600C162DD /* GoogleService-Info.plist */,
 				50B075FE2003F43800C232E1 /* Info.plist */,
 			);
 			path = Tender.me;
@@ -287,7 +287,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = unicorn;
 				TargetAttributes = {
 					50B075EE2003F43800C232E1 = {
@@ -341,7 +341,7 @@
 				50409F24200542DE00FB500B /* Geometria-LightItalic.otf in Resources */,
 				50409F2A200542DE00FB500B /* Geometria-Bold.otf in Resources */,
 				50B075FA2003F43800C232E1 /* Assets.xcassets in Resources */,
-				507F2CF2206CC1C500AAC432 /* GoogleService-Info.plist in Resources */,
+				50D7EFEC2086043600C162DD /* GoogleService-Info.plist in Resources */,
 				50409F1F200542DE00FB500B /* Geometria-ThinItalic.otf in Resources */,
 				50B075F82003F43800C232E1 /* Main.storyboard in Resources */,
 			);
@@ -477,6 +477,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -484,6 +485,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -534,6 +536,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -541,6 +544,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -578,12 +582,12 @@
 				CODE_SIGN_ENTITLEMENTS = Tender.me/Tender.me.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 649M8TPCDZ;
+				DEVELOPMENT_TEAM = U6CCSK6J7L;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = Tender.me/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.unicorn.Tenderme;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tender.meapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -599,12 +603,12 @@
 				CODE_SIGN_ENTITLEMENTS = Tender.me/Tender.me.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 649M8TPCDZ;
+				DEVELOPMENT_TEAM = U6CCSK6J7L;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = Tender.me/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.unicorn.Tenderme;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tender.meapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

@@ -114,22 +114,10 @@ class Registration2VC: UIViewController, UITextFieldDelegate {
         sendEmailVerification()
         let verifyAlert = UIAlertController(title: "Подтверждение почты", message: "Вам на почту было отправлено письмо с кодом подтверждения. Пройдите по присланной ссылке и войдите в учетную запись.", preferredStyle: .alert)
         verifyAlert.addAction(UIAlertAction(title: "Понятно", style: .default, handler: { (alert) in
-            while true {
-                //Cheking if user verified email or not
-                reloadUser()
-                if (Auth.auth().currentUser?.isEmailVerified)! {
-                    self.barBtn.title = "Войти"
-                    self.view.alpha = 1
-                    self.isVerified = true
-                    self.wasVerified()
-                    break
-                }
-                sleep(2)
-            }
+            self.barBtn.title = "Войти"
+            self.view.alpha = 1
+            self.isVerified = true
         }))
-        self.barBtn.title = ""
-        view.alpha = 0.5
-        errorDescription("После подтверждения почты, приложение закончит регистарцию")
         present(verifyAlert, animated: true, completion: nil)
     }
     
@@ -194,12 +182,6 @@ class Registration2VC: UIViewController, UITextFieldDelegate {
     func noError() {
         errorLbl.text = ""
         errorLbl.isHidden = true
-    }
-    
-    func wasVerified() {
-        errorLbl.text = "Ваша почта была подтверждена"
-        errorLbl.textColor = UIColor(hex: green)
-        errorLbl.isHidden = false
     }
 
 }

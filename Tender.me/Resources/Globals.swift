@@ -95,7 +95,7 @@ func reloadUser() {
 }
 
 func sendEmailVerification() {
-    if !(Auth.auth().currentUser?.isEmailVerified)! {
+    if !((Auth.auth().currentUser?.isEmailVerified)!) {
         Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
             if error != nil {
                 print("MSG: Enable to send verification message")
