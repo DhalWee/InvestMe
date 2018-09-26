@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension Int {
+    func square() -> Int {
+        return self*self
+    }
+}
+
 class LaunchVC: UIViewController {
 
     override func viewDidLoad() {

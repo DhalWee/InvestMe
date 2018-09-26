@@ -46,11 +46,22 @@
 		50B075FD2003F43800C232E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B075FB2003F43800C232E1 /* LaunchScreen.storyboard */; };
 		50BDD438200B26530078E01A /* ViewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BDD437200B26530078E01A /* ViewPostVC.swift */; };
 		50CFE75020099018005DEA4E /* MyListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFE74F20099018005DEA4E /* MyListVC.swift */; };
+		50D0D91320DE95B8003B3C39 /* Tender_meTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D0D91220DE95B8003B3C39 /* Tender_meTests.swift */; };
 		50D55CB62007BCC300B70A2D /* Tender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D55CB52007BCC300B70A2D /* Tender.swift */; };
 		50D55CB82007BCD100B70A2D /* TenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D55CB72007BCD100B70A2D /* TenderCell.swift */; };
 		50D7EFEC2086043600C162DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50D7EFEB2086043600C162DD /* GoogleService-Info.plist */; };
 		50E935E1201F7FF700488A20 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E935E0201F7FF700488A20 /* EditVC.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		50D0D91520DE95B8003B3C39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50B075E72003F43800C232E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50B075EE2003F43800C232E1;
+			remoteInfo = Tender.me;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		05A3B7053B0DBE7A0F3F8934 /* Pods-Tender.me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tender.me.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tender.me/Pods-Tender.me.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +107,9 @@
 		50B6372120066D310087770F /* Tender.me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tender.me.entitlements; sourceTree = "<group>"; };
 		50BDD437200B26530078E01A /* ViewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostVC.swift; sourceTree = "<group>"; };
 		50CFE74F20099018005DEA4E /* MyListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListVC.swift; sourceTree = "<group>"; };
+		50D0D91020DE95B8003B3C39 /* Tender.meTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tender.meTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50D0D91220DE95B8003B3C39 /* Tender_meTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tender_meTests.swift; sourceTree = "<group>"; };
+		50D0D91420DE95B8003B3C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50D55CB52007BCC300B70A2D /* Tender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tender.swift; sourceTree = "<group>"; };
 		50D55CB72007BCD100B70A2D /* TenderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenderCell.swift; sourceTree = "<group>"; };
 		50D7EFEB2086043600C162DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -109,6 +123,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DAB3A404B84F5C619DF37E0 /* Pods_Tender_me.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50D0D90D20DE95B8003B3C39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				50B075F12003F43800C232E1 /* Tender.me */,
+				50D0D91120DE95B8003B3C39 /* Tender.meTests */,
 				50B075F02003F43800C232E1 /* Products */,
 				742A8759710B7D47D631FFA0 /* Pods */,
 				53391292843D05E2B6C8E807 /* Frameworks */,
@@ -189,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				50B075EF2003F43800C232E1 /* Tender.me.app */,
+				50D0D91020DE95B8003B3C39 /* Tender.meTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,6 +263,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		50D0D91120DE95B8003B3C39 /* Tender.meTests */ = {
+			isa = PBXGroup;
+			children = (
+				50D0D91220DE95B8003B3C39 /* Tender_meTests.swift */,
+				50D0D91420DE95B8003B3C39 /* Info.plist */,
+			);
+			path = Tender.meTests;
+			sourceTree = "<group>";
+		};
 		53391292843D05E2B6C8E807 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,13 +312,31 @@
 			productReference = 50B075EF2003F43800C232E1 /* Tender.me.app */;
 			productType = "com.apple.product-type.application";
 		};
+		50D0D90F20DE95B8003B3C39 /* Tender.meTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50D0D91920DE95B9003B3C39 /* Build configuration list for PBXNativeTarget "Tender.meTests" */;
+			buildPhases = (
+				50D0D90C20DE95B8003B3C39 /* Sources */,
+				50D0D90D20DE95B8003B3C39 /* Frameworks */,
+				50D0D90E20DE95B8003B3C39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50D0D91620DE95B8003B3C39 /* PBXTargetDependency */,
+			);
+			name = Tender.meTests;
+			productName = Tender.meTests;
+			productReference = 50D0D91020DE95B8003B3C39 /* Tender.meTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		50B075E72003F43800C232E1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = unicorn;
 				TargetAttributes = {
@@ -298,6 +348,11 @@
 								enabled = 1;
 							};
 						};
+					};
+					50D0D90F20DE95B8003B3C39 = {
+						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 50B075EE2003F43800C232E1;
 					};
 				};
 			};
@@ -315,6 +370,7 @@
 			projectRoot = "";
 			targets = (
 				50B075EE2003F43800C232E1 /* Tender.me */,
+				50D0D90F20DE95B8003B3C39 /* Tender.meTests */,
 			);
 		};
 /* End PBXProject section */
@@ -344,6 +400,13 @@
 				50D7EFEC2086043600C162DD /* GoogleService-Info.plist in Resources */,
 				50409F1F200542DE00FB500B /* Geometria-ThinItalic.otf in Resources */,
 				50B075F82003F43800C232E1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50D0D90E20DE95B8003B3C39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +504,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50D0D90C20DE95B8003B3C39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50D0D91320DE95B8003B3C39 /* Tender_meTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		50D0D91620DE95B8003B3C39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50B075EE2003F43800C232E1 /* Tender.me */;
+			targetProxy = 50D0D91520DE95B8003B3C39 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		50B075F62003F43800C232E1 /* Main.storyboard */ = {
@@ -616,6 +695,42 @@
 			};
 			name = Release;
 		};
+		50D0D91720DE95B9003B3C39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U6CCSK6J7L;
+				INFOPLIST_FILE = Tender.meTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.unicorn.Tender-meTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tender.me.app/Tender.me";
+			};
+			name = Debug;
+		};
+		50D0D91820DE95B9003B3C39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U6CCSK6J7L;
+				INFOPLIST_FILE = Tender.meTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.unicorn.Tender-meTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tender.me.app/Tender.me";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -633,6 +748,15 @@
 			buildConfigurations = (
 				50B076022003F43800C232E1 /* Debug */,
 				50B076032003F43800C232E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50D0D91920DE95B9003B3C39 /* Build configuration list for PBXNativeTarget "Tender.meTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50D0D91720DE95B9003B3C39 /* Debug */,
+				50D0D91820DE95B9003B3C39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

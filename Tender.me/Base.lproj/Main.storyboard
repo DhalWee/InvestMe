@@ -1726,7 +1726,7 @@
         <image name="settingsIcon" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zq0-Fu-qfZ"/>
+        <segue reference="qtM-Je-bsq"/>
         <segue reference="2dj-x6-J85"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

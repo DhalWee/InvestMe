@@ -29,13 +29,7 @@ class MainViewVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Auth.auth().updateCurrentUser(Auth.auth().currentUser!) { (error) in
-            if error != nil {
-                print("MSG: \(String(describing: error))")
-            } else {
-                self.refresh(sender: self)
-            }
-        }
+        _ = Auth.auth().currentUser?.refreshToken
         
         errorLbl.isHidden = true
         
@@ -43,7 +37,6 @@ class MainViewVC: UIViewController {
         refreshControl.attributedTitle = NSAttributedString(string: "")
         refreshControl.addTarget(self, action: #selector(self.refresh(sender: )), for: UIControlEvents.valueChanged)
 
-        refresh(sender: self)
         closePopUp()
         view.backgroundColor = UIColor(hex: darkBlue)
 
